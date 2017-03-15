@@ -6,19 +6,25 @@ require 'benchmark'
 # => ["a", "b", "c", "d"]
 
 class BubbleSort
+  def swap_items(index)
+    temp = @unsorted[index]
+    @unsorted[index] = @unsorted[index+1]
+    @unsorted[index+1] = temp
+  end
+
   def sort(unsorted)
-    number_sorted = 0
-    until number_sorted == unsorted.length
-      unsorted.each_with_index do |item, index|
-        place = item
-        if index+1 >= unsorted.length - number_sorted
-          next
+    @unsorted = unsorted
+    number_sorted = 1
+    until number_sorted == @unsorted.length
+
+      @unsorted.each_with_index do |item, index|
+        compare = @unsorted[index + 1]
+        next unless compare #means we are at the end of this round
+
+        if item > compare
+          swap_items(index)
         end
-        compare = unsorted[index + 1]
-        if place > compare
-          unsorted[index] = compare
-          unsorted[index+1] = place
-        end
+
       end
       number_sorted += 1
     end
@@ -28,6 +34,7 @@ end
 
 time = Benchmark.measure do
   sorter = BubbleSort.new
-  sorter.sort(%w(b d f m z t r q o p w c e f j u l x n))
+  # p sorter.sort(["d", "b", "a", "c"])
+  p sorter.sort(('a'..'z').to_a.shuffle)
 end
 puts time

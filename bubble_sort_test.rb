@@ -9,6 +9,12 @@ class BubbleSortTest < MiniTest::Test
     sorter = BubbleSort.new
     assert sorter
   end
+  def test_insert_sort_works_for_random_alphabet
+    sorter = BubbleSort.new
+    expected = ('a'..'z').to_a
+    test_letters = expected.shuffle
+    assert_equal expected, sorter.sort(test_letters)
+  end
   def test_sort_letters
     sorter = BubbleSort.new
     start_letters = ["d", "b", "a", "c"]
