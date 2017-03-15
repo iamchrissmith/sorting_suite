@@ -17,7 +17,7 @@ class BubbleSort
     number_sorted = 1
     until number_sorted == @unsorted.length
 
-      @unsorted.each_with_index do |item, index|
+      @unsorted.each.with_index do |item, index|
         compare = @unsorted[index + 1]
         next unless compare #means we are at the end of this round
 

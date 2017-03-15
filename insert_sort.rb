@@ -11,7 +11,7 @@ class InsertionSort
   end
 
   def place_in_new_array(to_place)
-    @sorted.each_with_index do |in_place, index|
+    @sorted.each.with_index do |in_place, index|
       if in_place > to_place
         @sorted.insert(index,to_place)
         break
