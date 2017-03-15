@@ -1,15 +1,5 @@
 require 'pry'
 
-# sorter = BubbleSort.new
-# sorter.sort(["d", "b", "a", "c"])
-# => ["a", "b", "c", "d"]
-
-class BubbleSort
-  def sort(unsorted)
-    sorted
-  end
-end
-
 # sorter = InsertionSort.new
 # sorter.sort(["d", "b", "a", "c"])
 # => ["a", "b", "c", "d"]
@@ -32,7 +22,3 @@ class InsertionSort
 end
 sorter = InsertionSort.new
 sorter.sort(["d", "b", "a", "c"])
-
-# sorter = MergeSort.new
-# sorter.sort(["d", "b", "a", "c"])
-# => ["a", "b", "c", "d"]
