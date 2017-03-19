@@ -38,4 +38,11 @@ class MergeSortTest < MiniTest::Test
     assert_equal expected, sorter.sort(test_letters)
   end
 
+  def test_single_element_array_returns
+    sorter = MergeSort.new
+    expected = ["a"]
+    test_letters = ["a"]
+    assert_equal expected, sorter.sort(test_letters)    
+  end
+
 end
