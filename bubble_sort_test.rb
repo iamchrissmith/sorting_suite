@@ -20,5 +20,8 @@ class BubbleSortTest < MiniTest::Test
     start_letters = ["d", "b", "a", "c"]
     expected_letters = ["a", "b", "c", "d"]
     assert_equal expected_letters, sorter.sort(start_letters)
+    start_letters = ["d", "b", "a", "c", "d", "b", "a", "c"]
+    expected_letters = ["a", "a", "b", "b", "c", "c", "d", "d"]
+    assert_equal expected_letters, sorter.sort(start_letters)
   end
 end
