@@ -6,18 +6,13 @@ require 'benchmark'
 # => ["a", "b", "c", "d"]
 
 class InsertionSort
-  def initialize
-    @sorted = []
-  end
-
   def place_in_new_array(to_place)
     @sorted.each.with_index do |in_place, index|
-      if in_place > to_place
+      if @sorted.length == 0
+        @sorted[0] = to_place
+      elsif in_place > to_place
         @sorted.insert(index,to_place)
         break
-      elsif @sorted.length == 0 && (in_place < to_place)
-        @sorted[1] = @sorted[0]
-        @sorted[0] = to_place
       elsif @sorted.length == index + 1
         @sorted << to_place
         break

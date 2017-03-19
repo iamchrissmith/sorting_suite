@@ -21,5 +21,8 @@ class InsertionSortTest < MiniTest::Test
     expected = ["a", "b", "c", "d"]
     test_letters = ["d", "b", "a", "c"]
     assert_equal expected, sorter.sort(test_letters)
+    start_letters = ["d", "b", "a", "c", "d", "b", "a", "c"]
+    expected_letters = ["a", "a", "b", "b", "c", "c", "d", "d"]
+    assert_equal expected_letters, sorter.sort(start_letters)
   end
 end
