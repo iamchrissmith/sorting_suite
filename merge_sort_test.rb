@@ -24,6 +24,13 @@ class MergeSortTest < MiniTest::Test
     assert_equal expected, sorter.sort(test_letters)
   end
 
+  def test_merge_sort_works_for_random_alphabet
+    sorter = MergeSort.new
+    expected = (0..100).to_a
+    test_numbers = expected.shuffle
+    assert_equal expected, sorter.sort(test_numbers)
+  end
+
   def test_merge_sort_works_for_assignment_set
     sorter = MergeSort.new
     expected = ["a", "b", "c", "d"]
